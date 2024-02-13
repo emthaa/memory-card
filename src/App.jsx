@@ -1,33 +1,32 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Card from './components/Card'
+import PokemonList from './components/PokemonApiData'
+
+//make little database with pokemon 
+// id them
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [currentScore,updateCurrentScore] = useState(0)
+  const [bestScore,updateBestScore] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='topApp'>
+        <h1>Pokemon Memory Game</h1>
+        <div>
+          <p>Score: {currentScore}</p>
+          <p>Best Score: {bestScore}</p>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      
+      <main>
+      <Card />
+      <PokemonList />
+      </main>
     </>
   )
 }
