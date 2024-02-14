@@ -4,3 +4,20 @@
   padding-left: 15px;
   padding-right: 15px;
 }
+
+:root{
+  --card-width: 225px;
+  --card-height: calc(var(--card-width) * 1.4)
+}
+
+main{
+  display: flex;
+  justify-content: center;
+}
+
+.card-holder{
+  display: grid;
+  grid-template-columns: repeat(7,var(--card-width));
+  grid-template-rows: repeat(2,var(--card-height));
+  gap: 24px;
+}
