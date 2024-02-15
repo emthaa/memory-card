@@ -1,22 +1,23 @@
 .card{
     background-color: #242424;
-    border: 12px solid #e9e55d;
+    border: 8px solid #e9e55d;
     border-radius: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
-}
-
-:root{
-    --card-image-size: calc(var(--card-width) / 2.25);
+    
 }
 
 .card-name{
-
+  text-transform: capitalize;
+  font-size: 24px;
 }
 
-.card-image{
-  height: var(--card-image-size);
-  width: var(--card-image-size);
-  border: 4px solid #e9e55d;
+.card:hover{
+  background-color: #2e2e2e;
+  cursor: pointer;
+}
+
+.card:active{
+  background-color: #3d3d3d;
 }
