@@ -1,9 +1,11 @@
 function Card(props){
 
+    
+
     return(
         <div className="card">
-            <img src={props.cardImage}/>
-            <p>{props.cardName}</p>
+            <p className="card-name noselect" >{props.cardName}</p>
+            <img className ='card-image no-drag noselect' src={props.cardImage}/>
         </div>
     )
 

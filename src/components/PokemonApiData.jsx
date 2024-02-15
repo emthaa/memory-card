@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
-function PokemonList() {
-  const [pokemonList, setPokemonList] = useState([]);
+function PokemonList  (props) { 
+
+  
 
   useEffect(() => {
     const fetchData = async (fetchLink) => {
@@ -19,17 +20,6 @@ function PokemonList() {
       }
     };
 
-    const PokemonObject = (name,imageURL) => {
-    
-      const newObject = {
-        name: name,
-        imageURL: imageURL
-      }
-      
-      return newObject
-   
-    }
-
     const filterPokemonList = (pokemonData) =>{
       console.log(pokemonData)
       const newPokemonList = pokemonData.map(pokemon => ({
@@ -37,7 +27,8 @@ function PokemonList() {
         imageURL: pokemon.sprites.front_default
       }));
       
-      setPokemonList(newPokemonList);
+      props.setPokemonList(newPokemonList);
+
     }
 
     const fetchPokemonData = async () => {
@@ -56,9 +47,9 @@ function PokemonList() {
     };
 
     fetchPokemonData();
-  }, []);
+    
+  }, []); 
 
-  console.log(pokemonList)
   
 }
 
