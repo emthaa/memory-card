@@ -24,9 +24,9 @@ function PokemonList  (props) {
       console.log(pokemonData)
       const newPokemonList = pokemonData.map(pokemon => ({
         name: pokemon.name,
-        imageURL: pokemon.sprites.front_default
+        imageURL: pokemon.sprites.front_default,
+        id: pokemon.id
       }));
-      
       props.setPokemonList(newPokemonList);
 
     }
