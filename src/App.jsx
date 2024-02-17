@@ -23,7 +23,6 @@ function App() {
 
     function checkIfClickedAlready(id){
         for(let i = 0; i<cardsClickedOn.length;i++){
-            console.log(cardsClickedOn[i],id)
             if(cardsClickedOn[i] == id){
                 return true
             }
@@ -44,14 +43,24 @@ function App() {
         setCardsClickedOn(placeHolderArray)
     }
 
+    //make handler for best score
     
-    
+    function handleBestScore(updatedScore){  //checks if current score is bigger than best score
+        if(updatedScore >= bestScore){
+            setBestScore(updatedScore)
+        }
+    }
 
-    function handleCardClick(id) {
-        storeCardId(id)
-        const clickedAlready = checkIfClickedAlready(id)
+     function handleCardClick(id) {
+        storeCardId(id);
+        const clickedAlready = checkIfClickedAlready(id) ;
         if(clickedAlready == true){
-            setCardsClickedOn([])
+            setCurrentScore(0);
+            setCardsClickedOn([]); //user got something wrong
+        }else if(clickedAlready == false){
+            let updatedScore = currentScore + 1
+            setCurrentScore(updatedScore); //user got it right
+            handleBestScore(updatedScore)
         }
         shuffleCards();
         

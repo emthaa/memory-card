@@ -21,7 +21,6 @@ function PokemonList  (props) {
     };
 
     const filterPokemonList = (pokemonData) =>{
-      console.log(pokemonData)
       const newPokemonList = pokemonData.map(pokemon => ({
         name: pokemon.name,
         imageURL: pokemon.sprites.front_default,
@@ -33,7 +32,7 @@ function PokemonList  (props) {
 
     const fetchPokemonData = async () => {
       try {
-        const initialData = await fetchData("https://pokeapi.co/api/v2/pokemon?offset=0&limit=12");
+        const initialData = await fetchData("https://pokeapi.co/api/v2/pokemon?offset=0&limit=12"); //gets the first 12 pokemon
         if (initialData) {
           const pokemonDataPromises = initialData.results.map(pokemon => fetchData(pokemon.url));
           const pokemonData = await Promise.all(pokemonDataPromises);
