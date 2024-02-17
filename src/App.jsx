@@ -81,7 +81,7 @@ function App() {
     return (
         <>
             <div className='topApp'>
-                <h1>Memory Game</h1>
+                <h1>Pokemon Memory Game</h1>
                 <div>
                     <p className='score'>Score: {currentScore}</p>
                     <p className='score'>Best Score: {bestScore}</p>

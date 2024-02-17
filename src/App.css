@@ -15,7 +15,7 @@ main{
 .card-holder {
   grid-gap: 1rem;
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 200px; /* Set the height of implicit rows */
   width: 100%;
